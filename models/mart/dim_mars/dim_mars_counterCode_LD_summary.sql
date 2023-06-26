@@ -1,0 +1,1 @@
+SELECT * FROM {{ref('stg_mars_counterCode_LD_summary')}}

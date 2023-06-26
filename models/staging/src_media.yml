@@ -1,0 +1,371 @@
+version: 2
+
+sources:
+  - name: media_sov
+    database: lorealkorea-it
+    schema: media_sov
+    tables:
+      - name: media_sov
+        columns: 
+          - name: _6_media_total
+            tests:
+              - not_null
+          - name: _7_media_total
+            tests:
+              - not_null
+        columns: 
+          - name: advertiser
+            tests:
+              - not_null
+          - name: brand
+            tests:
+              - not_null
+        columns: 
+          - name: category_1_1
+            tests:
+              - not_null
+          - name: category_1_2
+            tests:
+              - not_null
+        columns: 
+          - name: category_2
+            tests:
+              - not_null
+          - name: category_3
+            tests:
+              - not_null
+        columns: 
+          - name: category_4
+            tests:
+              - not_null
+          - name: catv
+            tests:
+              - not_null
+        columns: 
+          - name: company
+            tests:
+              - not_null
+          - name: dgt_da_social
+            tests:
+              - not_null
+          - name: dgt_search
+            tests:
+              - not_null
+          - name: dgt_total
+            tests:
+              - not_null
+          - name: dgt_video
+            tests:
+              - not_null
+          - name: gtv
+            tests:
+              - not_null
+          - name: mag
+            tests:
+              - not_null
+          - name: npp
+            tests:
+              - not_null
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                   column_type_list: [date, datetime]
+              - not_null
+          - name: product_category
+            tests:
+              - not_null
+          - name: product_name
+            tests:
+              - not_null
+          - name: radio
+            tests:
+              - not_null
+          - name: tv_
+            tests:
+              - not_null
+          - name: year
+            tests:
+              - not_null
+              
+  - name: media_spending
+    database: lorealkorea-it
+    schema: media_spending
+    tables:
+      - name: media_mezzo_spending
+        columns: 
+          - name: start_date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                   column_type_list: [date, datetime]
+              - not_null
+          - name: end_date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                   column_type_list: [date, datetime]
+              - not_null
+          - name: ad_placement
+            tests:
+              - not_null
+          - name: ad_placement_details
+            tests:
+              - not_null
+          - name: ad_placement_kor_
+            tests:
+              - not_null
+          - name: adserving_status
+            tests:
+              - not_null
+          - name: agency
+            tests:
+              - not_null
+          - name: agency_fee
+            tests:
+              - not_null
+          - name: amp_click
+            tests:
+              - not_null
+          - name: amp_cpc
+            tests:
+              - not_null
+          - name: amp_cpm
+            tests:
+              - not_null
+          - name: amp_cpv
+            tests:
+              - not_null
+          - name: amp_ctr
+            tests:
+              - not_null
+          - name: amp_impression
+            tests:
+              - not_null
+          - name: amp_view
+            tests:
+              - not_null
+          - name: amp_vtr
+            tests:
+              - not_null
+          - name: brand
+            tests:
+              - not_null
+          - name: budget_net_
+            tests:
+              - not_null
+          - name: campaign
+            tests:
+              - not_null
+          - name: campaign_theme_brand_day_on_going_f_f_etc_
+            tests:
+              - not_null
+          - name: conversion_g_
+            tests:
+              - not_null
+          - name: conversion_m_
+            tests:
+              - not_null
+          - name: conversion_t_
+            tests:
+              - not_null
+          - name: cvr_g_
+            tests:
+              - not_null
+          - name: cvr_m_
+            tests:
+              - not_null
+          - name: cvr_t_
+            tests:
+              - not_null
+          - name: device
+            tests:
+              - not_null
+          - name: digital_lever
+            tests:
+              - not_null
+          - name: division
+            tests:
+              - not_null
+          - name: executed_month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                   column_type_list: [date, datetime]
+              - not_null
+          - name: gross_budget
+            tests:
+              - not_null
+          - name: kpi_benchmark_vtr_
+            tests:
+              - not_null
+          - name: kpi_benchmark_ctr_
+            tests:
+              - not_null
+          - name: kpi_ctr
+            tests:
+              - not_null
+          - name: kpi_vtr
+            tests:
+              - not_null
+          - name: landing_category
+            tests:
+              - not_null
+          - name: landing_page
+            tests:
+              - not_null
+          - name: media
+            tests:
+              - not_null
+          - name: objectives
+            tests:
+              - not_null
+          - name: pmm_click
+            tests:
+              - not_null
+          - name: pmm_cpc
+            tests:
+              - not_null
+          - name: pmm_cpm
+            tests:
+              - not_null
+          - name: pmm_cpv
+            tests:
+              - not_null
+          - name: pmm_ctr
+            tests:
+              - not_null
+          - name: pmm_imp
+            tests:
+              - not_null
+          - name: pmm_view
+            tests:
+              - not_null
+          - name: pmm_vtr
+            tests:
+              - not_null
+          - name: product
+            tests:
+              - not_null
+          - name: product_category
+            tests:
+              - not_null
+          - name: revenue_g_
+            tests:
+              - not_null
+          - name: revenue_m_
+            tests:
+              - not_null
+          - name: revenue_t_
+            tests:
+              - not_null
+          - name: roas_g_
+            tests:
+              - not_null
+          - name: roas_m_
+            tests:
+              - not_null
+          - name: roas_t_
+            tests:
+              - not_null
+          - name: submedia
+            tests:
+              - not_null
+          - name: t_standard
+            tests:
+              - not_null
+          - name: type
+            tests:
+              - not_null
+          - name: vehicle
+            tests:
+              - not_null
+          - name: year
+            tests:
+              - not_null
+          - name: year_month
+            tests:
+              - not_null
+
+  - name: media_luxecom_ebtq_naver
+    database: lorealkorea-it
+    schema: media_luxecom_ebtq_naver
+    tables:
+      - name: media_lux_ecom_ebtq_naver
+        columns:
+          - name: date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                   column_type_list: [date, datetime]
+              - not_null     
+          - name: ad_placement
+            tests:
+              - not_null
+          - name: brand
+            tests:
+              - not_null
+          - name: click
+            tests:
+              - not_null
+          - name: conversion_g
+            tests:
+              - not_null
+          - name: conversion_m
+            tests:
+              - not_null
+          - name: conversion_t
+            tests:
+              - not_null
+          - name: cost_gross_
+            tests:
+              - not_null
+          - name: cost_net_net_
+            tests:
+              - not_null
+          - name: cpc
+            tests:
+              - not_null
+          - name: cpm
+            tests:
+              - not_null
+          - name: ctr
+            tests:
+              - not_null
+          - name: cvr_g
+            tests:
+              - not_null
+          - name: cvr_m
+            tests:
+              - not_null
+          - name: cvr_t
+            tests:
+              - not_null
+          - name: impression
+            tests:
+              - not_null
+          - name: landing
+            tests:
+              - not_null
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                   column_type_list: [date, datetime]
+              - not_null
+          - name: publisher
+            tests:
+              - not_null
+          - name: revevue_g
+            tests:
+              - not_null
+          - name: revevue_m
+            tests:
+              - not_null
+          - name: revevue_t
+            tests:
+              - not_null
+          - name: roas_g
+            tests:
+              - not_null
+          - name: roas_m
+            tests:
+              - not_null
+          - name: roas_t
+            tests:
+              - not_null
+              

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: test_master
+    database: lorealkorea-it
+    schema: test_master
+    tables:
+      - name: v_product_master_221228

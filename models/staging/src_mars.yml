@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: mars_counterCode_LD_specification
+    database: lorealkorea-it
+    schema: mars_countercode_ld_specification
+    tables:
+      - name: mars_counter_code_ld_specification
+
+  - name: mars_counterCode_LD_summary
+    database: lorealkorea-it
+    schema: mars_countercode_ld_summary
+    tables:
+      - name: mars_counter_code_ld_summary

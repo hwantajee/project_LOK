@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: influencer_linkbricks_top5_influencer
+    database: lorealkorea-it
+    schema: influencer_linkbricks_top5_influencer
+    tables:
+      - name: influencer_linkbricks_top_5_influencer
+      
+  - name: influencer_traackr_performance
+    database: lorealkorea-it
+    schema: influencer_traackr_performance
+    tables:
+      - name: influencer_traackr_performance
+        columns: 
+          - name: date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+
+  - name: influencer_traackr_performance_w
+    database: lorealkorea-it
+    schema: influencer_traackr_performance_w
+    tables:
+      - name: influencer_traackr_performance_w
+
+  - name: social_springklr_div_brand_distribut
+    database: lorealkorea-it
+    schema: social_springklr_div_brand_distribut
+    tables:
+      - name: social_springklr_div_brand_distribut
+        columns: 
+          - name: date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+
+  # - name: social_springklr_div_brand_distribut_w
+  #   database: lorealkorea-it
+  #   schema: social_springklr_div_brand_distribut_w
+  #   tables:
+  #     - name: social_springklr_div_brand_distribut_w_*

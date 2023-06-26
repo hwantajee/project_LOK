@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: brand_bh
+    database: lorealkorea-it
+    schema: brand_bh
+    tables:
+      - name: dim_brand_bh
+ 
+ 

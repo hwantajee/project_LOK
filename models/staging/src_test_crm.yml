@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: test_mbb_member
+    database: lorealkorea-it
+    schema: test_mbb_member
+    tables:
+      - name: mbb_member_*
+
+  - name: test_mbb_purchase_journey
+    database: lorealkorea-it
+    schema: test_mbb_purchase_journey
+    tables:
+      - name: mbb_purchase_journey_*
+
+  - name: crm_mbb_purchase_product
+    database: lorealkorea-it
+    schema: crm_mbb_purchase_product
+    tables:
+      - name: mbb__purchase_product_*

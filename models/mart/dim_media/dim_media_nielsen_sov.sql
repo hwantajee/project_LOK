@@ -1,0 +1,27 @@
+SELECT
+year,				
+month,				
+advertiser,				
+product_category,				
+product_name,				
+tv,				
+radio,				
+npp,				
+mag,				
+catv,				
+gtv,				
+media_total_6,				
+dgt_video,				
+dgt_da_social,				
+dgt_search,				
+dgt_total,				
+media_total_7,				
+company,				
+brand,				
+category_1_1,				
+category_1_2,				
+category_2,				
+category_3,				
+category_4				
+
+FROM {{ref('stg_media_nielsen_sov')}}

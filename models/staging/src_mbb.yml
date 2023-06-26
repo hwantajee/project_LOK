@@ -1,0 +1,168 @@
+version: 2
+
+sources:
+  - name: crm_mbb_member
+    database: lorealkorea-it
+    schema: crm_mbb_member
+    tables:
+      - name: crm_mbb_member_*
+        columns: 
+          - name: brand_new_date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: app_new_date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: binding
+            tests:
+              - not_null
+          - name: brand_cd
+            tests:
+              - not_null
+          - name: cell_phone
+            tests:
+              - not_null
+          - name: cell_phone_perm_yn
+            tests:
+              - not_null
+          - name: email_perm_yn
+            tests:
+              - not_null
+          - name: landing_app_category
+            tests:
+              - not_null
+          - name: landing_brand_store
+            tests:
+              - not_null
+          - name: loyalty_level
+            tests:
+              - not_null
+          - name: loyalty_points
+            tests:
+              - not_null
+          - name: mail_perm_yn
+            tests:
+              - not_null
+          - name: marketing_perm_yn
+            tests:
+              - not_null
+          - name: mars_id
+            tests:
+              - not_null
+          - name: member_brand
+            tests:
+              - not_null
+          - name: name
+            tests:
+              - not_null
+          - name: pii_credential
+            tests:
+              - not_null
+          - name: push_perm_yn
+            tests:
+              - not_null
+          - name: sms_perm_yn
+            tests:
+              - not_null
+          - name: stamp_creation_date
+            tests:
+              - not_null
+          - name: store_id
+            tests:
+              - not_null
+          - name: store_name
+            tests:
+              - not_null
+          - name: transfer_overseas_yn
+            tests:
+              - not_null
+          - name: unique_id
+            tests:
+              - not_null
+          - name: welcome_gift_date
+            tests:
+              - not_null
+          - name: withdraw_date
+            tests: 
+              - not_null
+
+  - name: crm_mbb_purchase
+    database: lorealkorea-it
+    schema: crm_mbb_purchase
+    tables:
+      - name: crm_mbb_purchase_*
+        columns: 
+          - name: brand_new_date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: order_date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: cell_phone
+            tests:
+              - not_null
+          - name: mars_id
+            tests:
+              - not_null
+          - name: mbb_new_date
+            tests:
+              - not_null
+          - name: member_brand
+            tests:
+              - not_null
+          - name: name
+            tests:
+              - not_null
+          - name: order_id_eretailer_
+            tests:
+              - not_null
+          - name: order_id_mbb_
+            tests:
+              - not_null
+          - name: order_status
+            tests:
+              - not_null
+          - name: product_id
+            tests:
+              - not_null
+          - name: product_name
+            tests:
+              - not_null
+          - name: purchase_store
+            tests:
+              - not_null
+          - name: quantity
+            tests:
+              - not_null
+          - name: unique_id
+            tests:
+              - not_null
+          - name: unit_price
+            tests:
+              - not_null
+
+  - name: mbb_purchase_product
+    database: lorealkorea-it
+    schema: mbb_purchase_product
+    tables:
+      - name: mbb_purchase_product_*
+
+  - name: mbb_purchase_journey
+    database: lorealkorea-it
+    schema: mbb_purchase_journey
+    tables:
+      - name: mbb_purchase_journey_*
+
+  - name: mbb_member
+    database: lorealkorea-it
+    schema: mbb_member
+    tables:
+      - name: mbb_member_*

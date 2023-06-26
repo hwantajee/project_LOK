@@ -1,0 +1,1 @@
+SELECT * FROM {{source('sales_naver_uv','sales_naver_uv')}}

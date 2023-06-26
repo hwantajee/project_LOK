@@ -1,0 +1,23 @@
+SELECT
+brand_abbr					
+,buyer_cnt					
+,coupon_amt					
+,coupon_order					
+,coupon_product					
+,date				
+,day			
+,delivery_fee					
+,mobile_rate_order					
+,mobile_rate_sales					
+,`order`					
+,order_per_unit					
+,order_unit_price					
+,refund_amt					
+,refund_cnt					
+,refund_quantity					
+,refund_rate_sales					
+,refund_rate_unit					
+,sales					
+,time_slot					
+,unit			
+FROM {{ref('stg_sales_naver_salesPerformance')}}

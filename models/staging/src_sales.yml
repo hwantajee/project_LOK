@@ -1,0 +1,497 @@
+version: 2
+
+sources:
+  - name: sales_kakao_cvr
+    database: lorealkorea-it
+    schema: sales_kakao_cvr
+    tables:
+      - name: sales_kakao_cvr
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null    
+          - name: account
+            tests:
+              - not_null
+          - name: brand_kr
+            tests:
+              - not_null
+          - name: buy_category
+            tests:
+              - not_null
+          - name: cr_buy
+            tests:
+              - not_null
+  
+  - name: sales_kakao_gift
+    database: lorealkorea-it
+    schema: sales_kakao_gift
+    tables:
+      - name: sales_kakao_gift
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: account
+            tests:
+              - not_null
+          - name: brand
+            tests:
+              - not_null
+          - name: gift_for_oneself
+            tests:
+              - not_null
+          - name: gift_for_others
+            tests:
+              - not_null              
+
+  - name: sales_kakao_performance
+    database: lorealkorea-it
+    schema: sales_kakao_performance
+    tables:
+      - name: sales_kakao_performance
+        columns:
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: _of_clicks
+            tests:
+              - not_null
+          - name: account
+            tests:
+              - not_null
+          - name: brand
+            tests:
+              - not_null
+          - name: brand_kr
+            tests:
+              - not_null
+          - name: buyer
+            tests:
+              - not_null
+          - name: sales
+            tests:
+              - not_null
+          - name: uv
+            tests:
+              - not_null
+      
+  - name: sales_kakao_total
+    database: lorealkorea-it
+    schema: sales_kakao_total
+    tables:
+      - name: sales_kakao_total
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: lok_ttl
+            tests:
+              - not_null
+  
+  - name: sales_liveCommerce
+    database: lorealkorea-it
+    schema: sales_livecommerce
+    tables:
+      - name: sales_live_commerce
+        columns: 
+          - name: date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: brand
+            tests:
+              - not_null
+          - name: category
+            tests:
+              - not_null
+          - name: cost_ads
+            tests:
+              - not_null
+          - name: cost_agency
+            tests:
+              - not_null
+          - name: cost_commission
+            tests:
+              - not_null
+          - name: cost_kol
+            tests:
+              - not_null
+          - name: cost_others
+            tests:
+              - not_null
+          - name: engagement_live_total
+            tests:
+              - not_null
+          - name: engagement_live_like
+            tests:
+              - not_null
+          - name: engagement_live_view
+            tests:
+              - not_null
+          - name: live_streamer_kol_name
+            tests:
+              - not_null
+          - name: live_streamer_kol_name_1
+            tests:
+              - not_null
+          - name: live_streamer_kol_name_2
+            tests:
+              - not_null
+          - name: live_streamer_kol_type
+            tests:
+              - not_null
+          - name: live_streamer_kol_type_1
+            tests:
+              - not_null
+          - name: live_streamer_kol_type_2
+            tests:
+              - not_null
+          - name: sales_live_basket_size
+            tests:
+              - not_null
+          - name: sales_live_cvr
+            tests:
+              - not_null
+          - name: sales_live_of_order
+            tests:
+              - not_null
+          - name: sales_live_sell_out
+            tests:
+              - not_null
+          - name: type
+            tests:
+              - not_null
+          - name: url
+            tests:
+              - not_null
+          
+  
+  - name: sales_lotte_salesPerformance
+    database: lorealkorea-it
+    schema: sales_lotte_salesperformance
+    tables:
+      - name: sales_lotte_sales_performance
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: brand
+            tests:
+              - not_null
+          - name: buyer_cnt
+            tests:
+              - not_null
+          - name: cr_buy
+            tests:
+              - not_null
+          - name: product_category_2
+            tests:
+              - not_null
+          - name: product_code
+            tests:
+              - not_null
+          - name: product_name
+            tests:
+              - not_null
+          - name: pv
+            tests:
+              - not_null
+          - name: sales
+            tests:
+              - not_null
+          - name: unit
+            tests:
+              - not_null
+      
+  - name: sales_naver_buyerCNT
+    database: lorealkorea-it
+    schema: sales_naver_buyercnt
+    tables:
+      - name: sales_naver_buyer_cnt
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: brand
+            tests:
+              - not_null
+          - name: exist_customer
+            tests:
+              - not_null
+          - name: exist_customer_ratio
+            tests:
+              - not_null
+          - name: new_customer
+            tests:
+              - not_null
+          - name: new_customer_ratio
+            tests:
+              - not_null
+          - name: order_uv
+            tests:
+              - not_null
+          - name: store_like_increase
+            tests:
+              - not_null
+          - name: unique_order
+            tests:
+              - not_null
+      
+  - name: sales_naver_channelPerformance
+    database: lorealkorea-it
+    schema: sales_naver_channelperformance
+    tables:
+      - name: sales_naver_channel_performance
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: ad_spending
+            tests:
+              - not_null
+          - name: brand_abbr
+            tests:
+              - not_null
+          - name: brand_day
+            tests:
+              - not_null
+          - name: channel_attribute
+            tests:
+              - not_null
+          - name: channel_detailed
+            tests:
+              - not_null
+          - name: channel_name
+            tests:
+              - not_null
+          - name: channel_type
+            tests:
+              - not_null
+          - name: order_14_days
+            tests:
+              - not_null
+          - name: order_amt_per_vist_last_click
+            tests:
+              - not_null
+          - name: order_last_click
+            tests:
+              - not_null
+          - name: order_rate_per_visit_last_click
+            tests:
+              - not_null
+          - name: pv
+            tests:
+              - not_null
+          - name: roas_14_days
+            tests:
+              - not_null
+          - name: roas_last_click
+            tests:
+              - not_null
+          - name: sales_14_days
+            tests:
+              - not_null
+          - name: sales_last_click
+            tests:
+              - not_null
+          - name: sales_per_visit_14_days
+            tests:
+              - not_null
+          - name: uv
+            tests:
+              - not_null
+          - name: visit
+            tests:
+              - not_null
+          - name: visit_per_pv
+            tests:
+              - not_null
+      
+  - name: sales_naver_productDemographic
+    database: lorealkorea-it
+    schema: sales_naver_productdemographic
+    tables:
+      - name: sales_naver_product_demographic
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: age
+            tests:
+              - not_null
+          - name: order_buy
+            tests:
+              - not_null
+          - name: product_id
+            tests:
+              - not_null
+          - name: product_name
+            tests:
+              - not_null
+          - name: refund_amt
+            tests:
+              - not_null
+          - name: refund_cnt
+            tests:
+              - not_null
+          - name: refund_unit_cnt
+            tests:
+              - not_null
+          - name: sales
+            tests:
+              - not_null
+          - name: sex
+            tests:
+              - not_null
+          - name: unit_buy
+            tests:
+              - not_null
+
+      
+  - name: sales_naver_productPerformance
+    database: lorealkorea-it
+    schema: sales_naver_productperformance
+    tables:
+      - name: sales_naver_product_performance
+        columns: 
+          - name: date
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: cr_pv
+            tests:
+              - not_null
+          - name: hero
+            tests:
+              - not_null
+          - name: product_id
+            tests:
+              - not_null
+          - name: product_name
+            tests:
+              - not_null
+          - name: pv
+            tests:
+              - not_null
+          - name: sales
+            tests:
+              - not_null
+          - name: unit_buy
+            tests:
+              - not_null
+      
+  - name: sales_naver_salesPerformance
+    database: lorealkorea-it
+    schema: sales_naver_salesperformance
+    tables:
+      - name: sales_naver_sales_performance
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+              - not_null
+          - name: brand_abbr
+            tests:
+              - not_null
+          - name: buyer_cnt
+            tests:
+              - not_null
+          - name: brand_cnt
+            tests:
+              - not_null
+          - name: coupon_amt
+            tests:
+              - not_null
+          - name: coupon_order
+            tests:
+              - not_null
+          - name: coupon_product
+            tests:
+              - not_null
+          - name: date
+            tests:
+              - not_null
+          - name: day
+            tests:
+              - not_null
+          - name: delivery_fee
+            tests:
+              - not_null
+          - name: mobile_order_rate
+            tests:
+              - not_null
+      
+  - name: sales_naver_uv
+    database: lorealkorea-it
+    schema: sales_naver_uv
+    tables:
+      - name: sales_naver_uv
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+      
+  - name: sales_ssg_memberCNT
+    database: lorealkorea-it
+    schema: sales_ssg_membercnt
+    tables:
+      - name: sales_ssg_member_cnt
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+      
+  - name: sales_ssg_memberPerformance
+    database: lorealkorea-it
+    schema: sales_ssg_memberperformance
+    tables:
+      - name: sales_ssg_member_performance
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+      
+  - name: sales_ssg_productPerformance
+    database: lorealkorea-it
+    schema: sales_ssg_productperformance
+    tables:
+      - name: sales_ssg_product_performance
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]
+      
+  - name: sales_ssg_uv_pv
+    database: lorealkorea-it
+    schema: sales_ssg_uv_pv
+    tables:
+      - name: sales_ssg_uv_pv
+        columns: 
+          - name: month
+            tests:
+              - dbt_expectations.expect_column_values_to_be_in_type_list:
+                  column_type_list: [date, datetime]

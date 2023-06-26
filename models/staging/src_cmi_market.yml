@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: cmi_marketdata
+    database: lorealkorea-it
+    schema: cmi_marketdata
+    tables:
+      - name: cmi_market_data
+        columns: 
+          - name: value
+            tests:
+              - not_null
+          - name: categories
+            tests:
+              - not_null
+          - name: channel
+            tests:
+              - not_null
+          - name: selectivities
+            tests:
+              - not_null
+          - name: year
+            tests:
+              - not_null
+          

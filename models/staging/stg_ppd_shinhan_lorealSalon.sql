@@ -1,0 +1,1 @@
+SELECT * FROM {{source('ppd_shinhanSalon','ppd_shinhan_loreal_salon')}}
