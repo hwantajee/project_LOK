@@ -1,1 +1,1 @@
-# LOK
+# Project: Loreal Korea
